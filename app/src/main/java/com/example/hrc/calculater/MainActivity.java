@@ -64,33 +64,49 @@ public class MainActivity extends AppCompatActivity {
                 CharSequence x = v.getText();
                 String y = x.toString();
                 y = y.concat("+0");
-                char a[] = y.toString().toCharArray();
+                y = "0+"+y;  
+                char a []  =y.toString().toCharArray();
                 int result=0;
                 String number1 = new String();
                 number1 = "0";
                 String number2 = new String();
                 number2 = "0";
+                String FinalAns = new String();
                 for(int i=0;i<a.length;i++)
                 {
 
                     if(a[i]=='+')
                     {
                        String ans = String.valueOf((Integer.parseInt(number2) + Integer.parseInt(number1)));
+                       number1 = new String(ans);
+                       v.setText(number1);
                        number2 = new String();
-                       number2 = ans;
-                       v.setText(ans);
+
 
                     }
                     else if(a[i]=='-')
                     {
 
+                        String ans = String.valueOf((Integer.parseInt(number2) - Integer.parseInt(number1)));
+                        number1 = new String(ans);
+                        v.setText(number1);
+                        number2 = new String();
+
                     }
                     else if(a[i]=='/')
                     {
+                        String ans = String.valueOf((Integer.parseInt(number2) / Integer.parseInt(number1)));
+                        number1 = new String(ans);
+                        v.setText(number1);
+                        number2 = new String();
 
                     }
                     else if(a[i]=='*')
                     {
+                        String ans = String.valueOf((Integer.parseInt(number2) * Integer.parseInt(number1)));
+                        number1 = new String(ans);
+                        v.setText(number1);
+                        number2 = new String();
 
                     }
                     else
